@@ -1,17 +1,39 @@
 import { StyleSheet, Text, View, TouchableOpacity, FlatList } from 'react-native'
 import React, { useState } from 'react'
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import { useNavigation } from '@react-navigation/native';
 
 interface OptioncardsProps {
     title: string;
     content: string[];
+    category: any;
   }
 
-export default function Optioncards({ title, content }: OptioncardsProps) {
+export default function Optioncards({ title, content, category }: OptioncardsProps) {
   const [show, setShow] = useState(false);
   const setState = () =>{
     setShow(prevState => !prevState);
   }
+  const navigation:any = useNavigation();
+
+  const handleNavigation = (item:any) => {
+    const screenMap:any = {
+      1: 'CatechismScreen', // Catechism
+      2: 'CreedScreen', // Creed
+      3: 'ConfessionScreen', // Confession
+      4: 'TulipScreen', // Confession
+      5: 'SolaScreen', // Confession
+      6: 'CtScreen', // Confession
+    };
+  
+    const screen:string = screenMap[category]; // Get the corresponding screen based on categoryType
+  
+    if (screen) {
+      navigation.navigate(screen, { itemName: item }); // Navigate to the correct screen
+    } else {
+      console.log('Unknown category type');
+    }
+  };
 
   return (
     <View style={styles.card}>
@@ -28,9 +50,9 @@ export default function Optioncards({ title, content }: OptioncardsProps) {
       {show && <FlatList
         data={content}  // The data array (items)
         renderItem={({ item }) => (
-          <View>
+          <TouchableOpacity onPress={() => handleNavigation(item)}>
             <Text style={styles.subtitle}>{item}</Text>
-          </View>
+          </TouchableOpacity>
         )}
         keyExtractor={(item, index) => index.toString()}  // Use index as key if no unique identifier is present
       />}

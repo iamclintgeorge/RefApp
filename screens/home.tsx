@@ -13,13 +13,12 @@ export default function Home() {
       <Text style={styles.title}>HOME</Text>
           <View       
           style={styles.container}>
-            <Optioncards title={"CATECHISMS"} content={["Westminster Short Catechism", "Westminster Larger Catechism", "Heidelberg Catechism"]}/>
-            <Optioncards title={"CREEDS"} content={["Apostles Creed", "Nicene Creed", "Athanasian Creed", "Chalcedonian Creed"]}/>
-            <Optioncards title={"CONFESSIONS"} content={["Westminster Confessions", "Belgic Confessions", "Canons of Dort"]}/>
-            <Optioncards title={"DOCTRINE OF GRACE"} content={[]}/>
-            <Optioncards title={"FIVE SOLAS"} content={[]}/>
-            <Optioncards title={"COVENANT THEOLOGY"} content={[]}/>
-            <Optioncards title={"MORE"} content={[]}/>
+            <Optioncards title={"CATECHISMS"} content={["Westminster Short Catechism", "Westminster Larger Catechism", "Heidelberg Catechism"]} category={1}/>
+            <Optioncards title={"CREEDS"} content={["Apostles Creed", "Nicene Creed", "Athanasian Creed", "Chalcedonian Creed"]} category={2}/>
+            <Optioncards title={"CONFESSIONS"} content={["Westminster Confessions", "Belgic Confessions", "Canons of Dort"]} category={3}/>
+            <Optioncards title={"DOCTRINE OF GRACE"} content={[]} category={4}/>
+            <Optioncards title={"FIVE SOLAS"} content={[]} category={5}/>
+            <Optioncards title={"COVENANT THEOLOGY"} content={[]} category={6}/>
           </View>
         </ScrollView>
         </SafeAreaView>
@@ -37,7 +36,7 @@ export default function Home() {
         fontWeight: "400",
         textAlign: "center",
         fontSize: 18,
-        marginBottom: 50,
+        marginBottom: 70,
         marginTop: 40,
       },
       container: {
