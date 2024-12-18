@@ -29,7 +29,7 @@ export default function Home() {
     const styles = StyleSheet.create({
       safeContainer: {
         flex: 1,
-        backgroundColor: "#0a0a0a"
+        backgroundColor: "black"
       },
       title:{
         color: "white",
@@ -40,7 +40,7 @@ export default function Home() {
         marginTop: 40,
       },
       container: {
-        backgroundColor: "#202020",
+        backgroundColor: "#151515",
         width:"92%",
         marginLeft: "4%",
         height: "auto",
