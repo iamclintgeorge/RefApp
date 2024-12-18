@@ -20,7 +20,7 @@ export default function Optioncards({ title, content, category }: OptioncardsPro
     const screenMap:any = {
       1: 'CatechismScreen', // Catechism
       2: 'CreedScreen', // Creed
-      3: 'ConfessionScreen', // Confession
+      3: 'WcfScreen', // Confession
       4: 'TulipScreen', // Confession
       5: 'SolaScreen', // Confession
       6: 'CtScreen', // Confession
