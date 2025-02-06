@@ -1,16 +1,16 @@
 import React from "react";
 import { ScrollView, Text } from "react-native";
+import { RouteProp } from "@react-navigation/native";
+import { RootStackParamList } from "../App"; // Import RootStackParamList from App.tsx
 import { Wsc } from "../content/Catechisms/wsc";
 import { Wlc } from "../content/Catechisms/wlc";
 import { Heidelberg } from "../content/Catechisms/heidelberg";
-import { RouteProp } from "@react-navigation/native";
 
 // Define type for the route params
-type CatechismScreenRouteProp = RouteProp<{ 
-  params: { 
-    itemName: string; 
-  };
-}, 'params'>;
+type CatechismScreenRouteProp = RouteProp<
+  RootStackParamList,
+  "CatechismScreen"
+>;
 
 interface CatechismScreenProps {
   route: CatechismScreenRouteProp;
@@ -34,9 +34,9 @@ const CatechismScreen = ({ route }: CatechismScreenProps) => {
 
   // Use the typed ContentMap
   const ContentMap: ContentMapType = {
-    'Westminster Short Catechism': Wsc,
-    'Westminster Larger Catechism': Wlc,
-    'Heidelberg Catechism': Heidelberg,
+    "Westminster Short Catechism": Wsc,
+    "Westminster Larger Catechism": Wlc,
+    "Heidelberg Catechism": Heidelberg,
   };
 
   const titlename = ContentMap[itemName];
@@ -46,8 +46,8 @@ const CatechismScreen = ({ route }: CatechismScreenProps) => {
       <Text>{titlename.Metadata.Title}</Text>
       {titlename.Data.map((paragraph, index) => (
         <Text key={index}>
-          {paragraph.Question} {'\n'}
-          {paragraph.Answer} {'\n'}
+          {paragraph.Question} {"\n"}
+          {paragraph.Answer} {"\n"}
         </Text>
       ))}
     </ScrollView>
