@@ -1,7 +1,7 @@
 import React from "react";
 import { ScrollView, Text } from "react-native";
 import { RouteProp } from "@react-navigation/native";
-import { RootStackParamList } from "../App"; // Import RootStackParamList from App.tsx
+import { RootStackParamList } from "../App";
 import { Wsc } from "../content/Catechisms/wsc";
 import { Wlc } from "../content/Catechisms/wlc";
 import { Heidelberg } from "../content/Catechisms/heidelberg";
